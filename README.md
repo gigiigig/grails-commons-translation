@@ -7,7 +7,6 @@ This plugin allow to create multilanguage fields in Grails.
 
 To add translation filed to a domain class, in domain class import Translation class
 
-
   org.gg.grails.plugin.commons.translation
   
 After add for every mylti language field,
@@ -27,14 +26,14 @@ In both case, you have to call translationService before validation.
 For instance in controller, you can have:
 
   translationService.add(domainInstance,'title')
-  if (!domainInstance.hasErrors() && domainInstance.save(flush: true)) { ..
+    if (!domainInstance.hasErrors() && domainInstance.save(flush: true)) { ..
   }
   
 In domain class you can call service in the beforeValidation hook 
 
   def beforeValidate() {
-  	translationService.add(this,'title')
-	}
+    translationService.add(this,'title')
+  }
 
 add method at this time, verify if at lest one of field translations have value,
 otherwise invalidate domain class, addin error 'default.blank.message' to transient field, "title" in this case
