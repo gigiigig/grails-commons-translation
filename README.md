@@ -36,13 +36,13 @@ In domain class you can call service in the beforeValidation hook
     }
 
 add method at this time, verify if at lest one of field translations have value,
-otherwise invalidate domain class, addin error 'default.blank.message' to transient field, "title" in this case
+otherwise invalidate domain class, adding error 'default.blank.message' to transient field, "title" in this case
 
 add method have also optional paramenter leght , 
 
     translationService.add(this,'title',34) 
   
-wich control i text is less long than leght,
-else add error  'default.maxsize.message' to field
+which verify text to be shorter than lenght,
+else adds to filed 'default.maxsize.message' error
 
 
